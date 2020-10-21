@@ -1,0 +1,16 @@
+PODS:
+  - Pendo (2.1.1)
+
+DEPENDENCIES:
+  - Pendo (~> 2.1.0)
+
+SPEC REPOS:
+  trunk:
+    - Pendo
+
+SPEC CHECKSUMS:
+  Pendo: 14c43d5eb24314c58e9198c279086dafa8eef128
+
+PODFILE CHECKSUM: caf2457a10180c2a5f99cb31afb4a3e75d22472f
+
+COCOAPODS: 1.8.4
