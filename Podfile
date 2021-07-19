@@ -11,5 +11,5 @@ target 'SwiftRadio' do
     inherit! :search_paths
     # Pods for testing
   end
-pod 'Pendo', '~> 2.3.0'
+pod 'Pendo', '~> 2.6.0'
 end
