@@ -33,12 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
        
 
+        func randomString(length: Int) -> String {
+          let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+          return String((0..<length).map{ _ in letters.randomElement()! })
+        }
+        
         
         
         let initParams = PendoInitParams()
-        initParams.visitorId = "CNVisitorID"
+        initParams.visitorId = randomString(length: 10)
         initParams.visitorData = ["key": "value", "Country": "USA", "Gender": "Male"]
-        initParams.accountId = "CNAccountID"
+        initParams.accountId = randomString(length: 10)
         initParams.accountData = ["key": "value", "Timezone": "EST", "Size": "Enterprise"]
 
         // *************** Aşağıdaki tek satır kodu silebilirsin ********
@@ -48,7 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PendoManager.shared().initSDK(
             "eyJhbGciOiJSUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJkYXRhY2VudGVyIjoidXMiLCJrZXkiOiI4NTA0ODBiNWFjNTJmYTEwY2JlM2Q4YTNkM2MwZDgyZWU2OWRhMWYwMTM1Yjk0MjgzZThlM2Y1YTdjOWE0Njk2NDZkZjQ0YmQ1YTQ5ODhjNTJjMjAwNTVhZTM4M2MwOTRjODVhNWY0NmU4NjUyZTU0NjNkZmU3ZjAxZjJiNjNjNi45YzZmNDc0NTdhYzIwODQxNzIwNGZmYjkxMDRmNGRkNC5hMDIwOWZlMjFiOWE4ZTRmNDlkNzA4ZWM1ZjgwYmYxZjRjZTBiNDFlYjY1MjViMDFiNjk0Y2NkMjlmMDA5ZDgyIn0.UFTDzOKpPMMxNq2EJdTGzVeiFxXdna5G-oa-qoFPo4fj-QGe4edvxCQxVJt4asJlrGSEgZrHXC2x1cjZXyMvMJqu-rQT-snVYn-vHLQwBxUp7hTyn99mT5YkjUBX7QPbl0n93AUFxEUp0gy-hlRGUfGwBbTguhRUizcBa9ViCAI",
             initParams: initParams) // call initSDK with initParams as a 2nd parameter.
-        
+
+        // eyJhbGciOiJSUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJkYXRhY2VudGVyIjoidXMiLCJrZXkiOiI4NTA0ODBiNWFjNTJmYTEwY2JlM2Q4YTNkM2MwZDgyZWU2OWRhMWYwMTM1Yjk0MjgzZThlM2Y1YTdjOWE0Njk2NDZkZjQ0YmQ1YTQ5ODhjNTJjMjAwNTVhZTM4M2MwOTRjODVhNWY0NmU4NjUyZTU0NjNkZmU3ZjAxZjJiNjNjNi45YzZmNDc0NTdhYzIwODQxNzIwNGZmYjkxMDRmNGRkNC5hMDIwOWZlMjFiOWE4ZTRmNDlkNzA4ZWM1ZjgwYmYxZjRjZTBiNDFlYjY1MjViMDFiNjk0Y2NkMjlmMDA5ZDgyIn0.UFTDzOKpPMMxNq2EJdTGzVeiFxXdna5G-oa-qoFPo4fj-QGe4edvxCQxVJt4asJlrGSEgZrHXC2x1cjZXyMvMJqu-rQT-snVYn-vHLQwBxUp7hTyn99mT5YkjUBX7QPbl0n93AUFxEUp0gy-hlRGUfGwBbTguhRUizcBa9ViCAI
+//        eyJhbGciOiJSUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJkYXRhY2VudGVyIjoidXMiLCJrZXkiOiI4NTA0ODBiNWFjNTJmYTEwY2JlM2Q4YTNkM2MwZDgyZWU2OWRhMWYwMTM1Yjk0MjgzZThlM2Y1YTdjOWE0Njk2NDZkZjQ0YmQ1YTQ5ODhjNTJjMjAwNTVhZTM4M2MwOTRjODVhNWY0NmU4NjUyZTU0NjNkZmU3ZjAxZjJiNjNjNi45YzZmNDc0NTdhYzIwODQxNzIwNGZmYjkxMDRmNGRkNC5hMDIwOWZlMjFiOWE4ZTRmNDlkNzA4ZWM1ZjgwYmYxZjRjZTBiNDFlYjY1MjViMDFiNjk0Y2NkMjlmMDA5ZDgyIn0.UFTDzOKpPMMxNq2EJdTGzVeiFxXdna5G-oa-qoFPo4fj-QGe4edvxCQxVJt4asJlrGSEgZrHXC2x1cjZXyMvMJqu-rQT-snVYn-vHLQwBxUp7hTyn99mT5YkjUBX7QPbl0n93AUFxEUp0gy-hlRGUfGwBbTguhRUizcBa9ViCAI
     
         // MPNowPlayingInfoCenter
         UIApplication.shared.beginReceivingRemoteControlEvents()
